@@ -66,7 +66,7 @@
 <body>
     <div class="payment-container">
         <h2>Payment Details</h2>
-        <form action="/BOOKMARTSITE/success.html" method="POST">
+        <form id="paymentForm" action="/BOOKMARTSITE/success.html" method="POST">
             <div class="input-group">
                 <label for="card-number">Card Number</label>
                 <input maxlength="16" type="text" id="card-number" name="card-number" required pattern="\d{16}" title="Card number should be 16 digits">
@@ -86,21 +86,36 @@
                 <input type="text" id="account-holder" name="account-holder" required pattern="[A-Za-z\s]+" title="Account holder name should contain only alphabets and spaces">
             </div>
             <button type="submit" class="btn">Proceed to Pay</button>
-            <script>
-    // Get the Buy button
-    const buyButton = document.querySelector('.btn');
-
-    // Add event listener to the Buy button
-    buyButton.addEventListener('click', (event) => {
-        // Prevent the form from submitting
-        event.preventDefault();
-
-        // Redirect to the success.html page
-        window.location.href = '/BOOKMARTSITE/success.html';
-    });
-</script>
-
         </form>
     </div>
+
+    <script>
+        const paymentForm = document.getElementById('paymentForm');
+        const buyButton = document.querySelector('.btn');
+
+        // Add event listener to the form submission
+        paymentForm.addEventListener('submit', (event) => {
+            // Validate all fields before submission
+            const cardNumber = document.getElementById("card-number").value;
+            const cvv = document.getElementById("cvv").value;
+            const expiryDate = document.getElementById("expiry-date").value;
+            const accountHolder = document.getElementById("account-holder").value;
+
+            if (!cardNumber || !cvv || !expiryDate || !accountHolder) {
+                alert("Please fill out all payment details before proceeding.");
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+
+        // The following code can be used to simulate the form submission (redirect)
+        buyButton.addEventListener('click', (event) => {
+            // Check if the form is valid
+            if (paymentForm.checkValidity()) {
+                window.location.href = '/BOOKMARTSITE/success.html';
+            } else {
+                alert("Please ensure all fields are filled correctly.");
+            }
+        });
+    </script>
 </body>
 </html>
