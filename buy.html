@@ -69,7 +69,7 @@
         <form action="/BOOKMARTSITE/success.html" method="POST">
             <div class="input-group">
                 <label for="card-number">Card Number</label>
-                <input type="text" id="card-number" name="card-number" required pattern="\d{16}" title="Card number should be 16 digits">
+                <input maxlength="16" type="text" id="card-number" name="card-number" required pattern="\d{16}" title="Card number should be 16 digits">
             </div>
             <div class="cvv-expiry-container">
                 <div class="input-group">
