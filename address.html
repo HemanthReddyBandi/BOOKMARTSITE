@@ -82,19 +82,7 @@
         </div>
 
         <button class="submit-btn" onclick="submitOrder()">Submit Order</button>
-                <script>
-    // Get the Buy button
-    const buyButton = document.querySelector('.submit-btn');
 
-    // Add event listener to the Buy button
-    buyButton.addEventListener('click', (event) => {
-        // Prevent the form from submitting
-        event.preventDefault();
-
-        // Redirect to the success.html page
-        window.location.href = '/BOOKMARTSITE/buy.html';
-    });
-</script>
     </div>
 
     <script>
@@ -131,11 +119,13 @@
             const bookSelect = document.getElementById("bookSelect").value;
             const price = document.getElementById("priceDisplay").innerText.split('$')[1];
 
+            // Check if all fields are filled
             if (!name || !phone || !address || !bookSelect) {
                 alert("Please fill out all fields and select a book.");
                 return;
             }
 
+            // If everything is filled, show the order details and proceed
             alert(`Order Summary:
 Name: ${name}
 Phone: ${phone}
@@ -144,6 +134,9 @@ Book: ${bookSelect}
 Price: $${price}
 
 Your order has been placed!`);
+
+            // Redirect to the success page after order is placed
+            window.location.href = '/BOOKMARTSITE/buy.html'; // Change this to your desired success page URL
         }
     </script>
 
