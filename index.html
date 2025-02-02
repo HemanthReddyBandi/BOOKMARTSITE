@@ -21,16 +21,53 @@
         <li><a href="/BOOKMARTSITE/Register.html">Create Account</a></li>
     </div>
 </nav>
- <!-- Section with Marquee effect and headline for Registration -->
-    <div class="section-registration">
-        <center>
-            <h1>
-                <marquee behavior="scroll" direction="left" scrollamount="10">
-                    <a href="/BOOKMARTSITE/Register.html" style="color: blue; font-size: 30px; font-weight: bold; text-decoration: none;">Click Here to Register</a>
-                </marquee>
-            </h1>
-        </center>
-    </div>
+<!-- Section with Marquee effect and headline for Registration -->
+<div class="section-registration">
+    <center>
+        <h1 class="marquee-title">
+            <marquee behavior="scroll" direction="left" scrollamount="10">
+                <a href="/BOOKMARTSITE/Register.html" class="register-link">Click Here to Register</a>
+            </marquee>
+        </h1>
+    </center>
+</div>
+
+<style>
+    /* Marquee section background with gradient */
+    .section-registration {
+        background: linear-gradient(45deg, #f5a623, #f76c6c); /* Gradient background */
+        padding: 20px 0;
+        margin: 20px 0;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Marquee text style */
+    .marquee-title {
+        font-size: 36px;
+        font-family: 'Arial', sans-serif;
+        color: white;
+        margin: 0;
+    }
+
+    /* Link inside the marquee with hover effect */
+    .register-link {
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #28a745; /* Green background */
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Hover effect on the link */
+    .register-link:hover {
+        background-color: #218838; /* Darker green */
+        transform: scale(1.1); /* Slightly enlarge the text */
+    }
+</style>
 
     <!-- Section 1 -->
     <div class="section-1">
