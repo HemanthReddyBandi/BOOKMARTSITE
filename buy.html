@@ -88,23 +88,5 @@
             <button type="submit" class="btn">Proceed to Pay</button>
         </form>
     </div>
-
-    <script>
-        const paymentForm = document.getElementById('paymentForm');
-
-        // Add event listener to the form submission
-        paymentForm.addEventListener('submit', (event) => {
-            // Validate all fields before submission
-            const cardNumber = document.getElementById("card-number").value;
-            const cvv = document.getElementById("cvv").value;
-            const expiryDate = document.getElementById("expiry-date").value;
-            const accountHolder = document.getElementById("account-holder").value;
-
-            if (!cardNumber || !cvv || !expiryDate || !accountHolder) {
-                alert("Please fill out all payment details before proceeding.");
-                event.preventDefault(); // Prevent form submission
-            }
-        });
-    </script>
 </body>
 </html>
