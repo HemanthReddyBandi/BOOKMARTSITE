@@ -86,18 +86,20 @@
                 <input type="text" id="account-holder" name="account-holder" required pattern="[A-Za-z\s]+" title="Account holder name should contain only alphabets and spaces">
             </div>
             <button type="submit" class="btn">Proceed to Pay</button>
-                         <script>
-            // Get all Buy buttons
-            const buyButtons = document.querySelectorAll('.btn');
+            <script>
+    // Get the Buy button
+    const buyButton = document.querySelector('.btn');
 
-            // Add event listener to each Buy button
-            buyButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Redirect to the buy.html page
-                    window.location.href = '/BOOKMARTSITE/success.html';
-                });
-            });
-        </script>
+    // Add event listener to the Buy button
+    buyButton.addEventListener('click', (event) => {
+        // Prevent the form from submitting
+        event.preventDefault();
+
+        // Redirect to the success.html page
+        window.location.href = '/BOOKMARTSITE/success.html';
+    });
+</script>
+
         </form>
     </div>
 </body>
