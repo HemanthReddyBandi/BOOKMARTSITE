@@ -35,14 +35,6 @@ display: flex;
 			font-size: 16px;
 		}
 
-            input[type="email"], input[type="email"] {
-			width: 100%;
-			padding: 10px;
-			margin-bottom: 10px;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-			font-size: 16px;
-            }
 		input[type="submit"] {
 			background-color: #4CAF50;
 			color: #fff;
@@ -65,18 +57,14 @@ display: flex;
 
 </head>
 <body>
-	<form method="post" action="register1.php">
-		<h1>REGISTRATION</h1>
+	<form method="post" action="addlogin.php">
+		<h1>Login</h1>
 		<label for="username">Username:</label>
 		<input type="text" name="username" placeholder="username" id="username" id="a" required>
-            <label for="email">Email:</label>
-		<input type="email" name="email" placeholder="email" id="email" id="b" required>
 		<label for="password">Password:</label>
-		<input type="password" name="password" placeholder="password"  id="password" id="c" required>
-            <label for="password">Confirm Password:</label>
-		<input type="password" name="confpassword" placeholder="confpassword"  id="confpassword" id="d" required>
-		<input type="submit" onmouseenter="fa()"  name="register1" value="register"></a>
-            <p> Already have an account? <a href="login1.html.html">LOGIN</a></p>
+		<input type="password" name="password" placeholder="password"  id="password" id="b" required>
+		<input type="submit" onmouseenter="fa()" name="add_login" value="Login">
+            <p> not yet member? <a href="index.html">REGISTER</a></p>
 	</form>
 	 <script>
         document.addEventListener('DOMContentLoaded', () => {
